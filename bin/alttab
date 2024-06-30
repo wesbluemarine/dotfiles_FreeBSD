@@ -1,0 +1,30 @@
+#!/bin/sh
+
+usage() {
+	echo "usage: $(basename $0) [-frh]" >&2
+}
+
+cur=$(pfw)
+top=$(lsw|head -n1)
+bot=$(lsw|tail -n1)
+prv=$(lsw|grep -B1 $cur|sed 2d)
+nxt=$(lsw|grep -A1 $cur|sed 1d)
+
+wid=${nxt:-$top}
+while getopts 'frh' OPT; do
+	case $OPT in
+	f) wid=${nxt:-$top} ;;
+	r) wid=${prv:-$bot} ;;
+	h) usage; exit ;;
+	esac
+done
+
+[ -z "$wid" ] && exit 1
+
+wattr whxyb $wid | {
+	read w h x y b
+	wmp -a $((x + w - 16)) $((y + h - 16))
+}
+
+chwso -r $wid
+wtf $wid

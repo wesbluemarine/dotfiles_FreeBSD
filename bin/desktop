@@ -1,0 +1,15 @@
+#!/bin/sh
+
+atom="DESKTOP_WINDOWS"
+root="$(lsw -r)"
+
+winlist="$(atomx $atom $root)"
+
+if [ -n "$winlist" ]; then
+	atomx -d $atom $root
+else
+	winlist="$(lsw)"
+	atomx ${atom}="$winlist" $root >/dev/null
+fi
+
+mapw -t $winlist

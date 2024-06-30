@@ -1,0 +1,38 @@
+#!/bin/sh
+# Make the current window cover the whole monitor, or change it back to
+# its previous size if it's already maxed out
+
+cur=$(pfw)
+wid=${1:-$cur}
+atom="ORIGINAL_SIZE"
+bord="ORIGINAL_BORDER_SIZE"
+
+[ -z "$wid" ] && exit 1
+
+# current window size
+w="$(wattr w $wid)"
+h="$(wattr w $wid)"
+b="$(wattr b $wid)"
+
+# monitor size / position
+mw="$(randr $wid | cut -f 2)"
+mh="$(randr $wid | cut -f 3)"
+mx="$(randr $wid | cut -f 4)"
+my="$(randr $wid | cut -f 5)"
+
+# retrieve original size saved in the "$atom" X atom (if any)
+size="$(atomx $atom $wid)"
+
+if  [ -n "$size" ]; then
+	wtp $size $wid
+	chwb -s $(atomx $bord $wid) $wid
+	atomx -d $atom $wid
+	atomx -d $bord $wid
+else
+	atomx ${atom}="$(wattr xywh $wid)" $wid > /dev/null
+	atomx ${bord}="$(wattr b $wid)" $wid > /dev/null
+	chwb -s 0 $wid
+	wtp $mx $my $mw $mh $wid
+fi
+
+wtf $wid
