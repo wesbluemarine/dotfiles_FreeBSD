@@ -1,0 +1,4 @@
+wlsunset  -l 43.8554 -L 10.5664 &
+waybar &
+sysctl hw.snd.default_unit=1 &
+swaybg -i ~/Pictures/Wallpapers/Emory-Allen-wallpaper-2560x1440.jpg &
