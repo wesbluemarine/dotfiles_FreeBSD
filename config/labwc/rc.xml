@@ -16,37 +16,38 @@
     <xwaylandPersistence>no</xwaylandPersistence>
   </core>
 
-  <placement>
-    <policy>automatic</policy>
-  </placement>
+<placement>
+  <policy>cascade</policy>
+  <cascadeOffset x="40" y="42"/>
+</placement>
 
   <!-- <font><theme> can be defined without an attribute to set all places -->
   <theme>
-    <name></name>
-    <cornerRadius>0</cornerRadius>
+    <name>omission</name>
+    <cornerRadius>10</cornerRadius>
     <keepBorder>yes</keepBorder>
     <dropShadows>yes</dropShadows>
     <font place="ActiveWindow">
-      <name>terminus</name>
-      <size>8</size>
+      <name>OstrichSans</name>
+      <size>20</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
     <font place="InactiveWindow">
-      <name>terminus</name>
-      <size>8</size>
+      <name>OstrichSans</name>
+      <size>20</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
     <font place="MenuItem">
-      <name>terminus</name>
-      <size>8</size>
+      <name>OstrichSans</name>
+      <size>20</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
     <font place="OnScreenDisplay">
-      <name>terminus</name>
-      <size>8</size>
+      <name>OstrichSans</name>
+      <size>20</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
@@ -112,7 +113,7 @@
   </resize>
 
   <focus>
-    <followMouse>yes</followMouse>
+    <followMouse>no</followMouse>
     <followMouseRequiresMovement>yes</followMouseRequiresMovement>
     <raiseOnFocus>no</raiseOnFocus>
   </focus>
@@ -216,10 +217,11 @@
     <keybind key="A-Tab">
       <action name="NextWindow" />
     </keybind>
-    <keybind key="W-Return">
+    
+        <keybind key="W-Return">
       <action name="Execute" command="alacritty" />
     </keybind>
-    <keybind key="F8">
+    <keybind key="F7">
 	 <action name="ForEach">
     <query identifier="alacritty"/>
     <then>
@@ -228,6 +230,18 @@
     </then>
     <none>
       <action name="Execute" command="alacritty"/>
+    </none>
+  </action>
+	</keybind>
+    <keybind key="F8">
+	 <action name="ForEach">
+    <query identifier="geany"/>
+    <then>
+      <action name="Raise"/>
+      <action name="Focus"/>
+    </then>
+    <none>
+      <action name="Execute" command="geany"/>
     </none>
   </action>
 	</keybind>
@@ -245,21 +259,27 @@
 	</keybind>
 		<keybind key="F10">
 	<action name="ForEach">
-    <query identifier="chromium-browser"/>
+    <query identifier="firefox"/>
     <then>
       <action name="Raise"/>
       <action name="Focus"/>
     </then>
     <none>
-      <action name="Execute" command="chrome"/>
+      <action name="Execute" command="firefox"/>
     </none>
   </action>
 </keybind>
-<keybind key="F2">
-      <action name="Execute" command="wofi --show drun" />
+<keybind key="F1">
+      <action name="Execute" command="window_list.sh" />
     </keybind>
     <keybind key="F6">
-      <action name="Close" />
+      <action name="Iconify" />
+    </keybind>
+<keybind key="F2">
+      <action name="Execute" command="tofi-drun --font ~/.local/share/fonts/OstrichSans-Medium.otf --drun-launch=true --ascii-input true" />
+    </keybind>
+    <keybind key="F6">
+      <action name="Iconify" />
     </keybind>
     <keybind key="F11">
       <action name="ToggleFullscreen" />
@@ -437,7 +457,7 @@
         <action name="Move" />
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximize" />
+        <action name="Iconify" />
       </mousebind>
       <mousebind button="Right" action="Click">
         <action name="ShowMenu" menu="client-menu" />
@@ -445,6 +465,9 @@
        <mousebind button="Middle" action="Click">
         <action name="Lower" />
       </mousebind>
+      <mousebind button="Middle" action="None">
+        <action name="Close" />
+      </mousebind>      
    </context>
 
     <context name="Maximize">
