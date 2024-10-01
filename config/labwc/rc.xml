@@ -29,19 +29,19 @@
     <dropShadows>yes</dropShadows>
     <font place="ActiveWindow">
       <name>OstrichSans</name>
-      <size>20</size>
+      <size>22</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
     <font place="InactiveWindow">
       <name>OstrichSans</name>
-      <size>20</size>
+      <size>22</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
     <font place="MenuItem">
       <name>OstrichSans</name>
-      <size>20</size>
+      <size>22</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
@@ -235,13 +235,13 @@
 	</keybind>
     <keybind key="F8">
 	 <action name="ForEach">
-    <query identifier="geany"/>
+    <query identifier="SDL_App"/>
     <then>
       <action name="Raise"/>
       <action name="Focus"/>
     </then>
     <none>
-      <action name="Execute" command="geany"/>
+      <action name="Execute" command="lite-xl"/>
     </none>
   </action>
 	</keybind>
@@ -457,7 +457,7 @@
         <action name="Move" />
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="Iconify" />
+        <action name="ToggleMaximize" />
       </mousebind>
       <mousebind button="Right" action="Click">
         <action name="ShowMenu" menu="client-menu" />
@@ -472,37 +472,37 @@
 
     <context name="Maximize">
       <mousebind button="Left" action="Click">
-        <action name="ToggleMaximize" />
+        <action name="None" />
       </mousebind>
       <mousebind button="Right" action="Click">
-        <action name="ToggleMaximize" direction="horizontal" />
+        <action name="None" direction="horizontal" />
       </mousebind>
       <mousebind button="Middle" action="Click">
-        <action name="ToggleMaximize" direction="vertical" />
+        <action name="None" direction="vertical" />
       </mousebind>
     </context>
 
     <context name="WindowMenu">
       <mousebind button="Left" action="Click">
-        <action name="ShowMenu" menu="client-menu" />
+        <action name="None" menu="client-menu" />
       </mousebind>
       <mousebind button="Right" action="Click">
-        <action name="ShowMenu" menu="client-menu" />
+        <action name="None" menu="client-menu" />
       </mousebind>
     </context>
 
     <context name="Iconify">
       <mousebind button="Left" action="Click">
-        <action name="Iconify" />
+        <action name="None" />
       </mousebind>
         <mousebind button="Right" action="Click">
-        <action name="Lower" />
+        <action name="None" />
       </mousebind>
   </context>
 
     <context name="Close">
       <mousebind button="Left" action="Click">
-        <action name="Close" />
+        <action name="None" />
       </mousebind>
     </context>
 
