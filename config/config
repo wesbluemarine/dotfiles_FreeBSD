@@ -1,0 +1,16 @@
+{
+  "mode": "overlay",
+  "layer": "top",
+  "position": "bottom",
+  "margin-left": 1700,  
+  "margin-bottom": 900,  
+  "modules-center": [
+    "custom/clock",
+   ],
+
+  "custom/clock": {
+    "exec": "date '+%H:%M'",
+    "interval": 1,
+    "rotate": 315,
+  },
+}
