@@ -28,6 +28,7 @@ window#waybar {
 {
     font-size: 3.2rem;
     padding: 7.4rem 11.5rem;
+    margin-top: 4rem;
     color: @light;
     min-width:  5.5rem;
     min-height:  7.5rem;
