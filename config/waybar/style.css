@@ -1,0 +1,34 @@
+@define-color dark #252529;
+@define-color light #ffffff;
+@define-color green #77ddbb;
+@define-color yellow #ebcb8b;
+@define-color red #ff6622;
+@define-color blue #88c0d0;
+
+@define-color bg @dark;
+@define-color fg @light;
+@define-color hl @blue;
+
+/*@define-color modbg alpha(@bg, .9);*/
+@define-color modbg transparent;
+
+* {
+  border-radius: 0;
+  font-family: OstrichSans;
+  color: @fg;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: @fg;
+  background: linear-gradient(45deg, transparent 40%, alpha(@bg, .9) 40%, alpha(@bg, .9) 60%, transparent 60%);
+}
+
+#custom-clock
+{
+    font-size: 3.2rem;
+    padding: 7.4rem 11.5rem;
+    color: @light;
+    min-width:  5.5rem;
+    min-height:  7.5rem;
+}
