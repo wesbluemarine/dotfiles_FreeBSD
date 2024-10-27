@@ -29,19 +29,19 @@
     <dropShadows>yes</dropShadows>
     <font place="ActiveWindow">
       <name>OstrichSans</name>
-      <size>22</size>
+      <size>20</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
     <font place="InactiveWindow">
       <name>OstrichSans</name>
-      <size>22</size>
+      <size>20</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
     <font place="MenuItem">
       <name>OstrichSans</name>
-      <size>22</size>
+      <size>20</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
@@ -113,7 +113,7 @@
   </resize>
 
   <focus>
-    <followMouse>no</followMouse>
+    <followMouse>yes</followMouse>
     <followMouseRequiresMovement>yes</followMouseRequiresMovement>
     <raiseOnFocus>no</raiseOnFocus>
   </focus>
@@ -214,12 +214,13 @@
     <layoutScope>global</layoutScope>
     <repeatRate>25</repeatRate>
     <repeatDelay>600</repeatDelay>
+    
     <keybind key="A-Tab">
       <action name="NextWindow" />
     </keybind>
     
         <keybind key="W-Return">
-      <action name="Execute" command="alacritty" />
+      <action name="Execute" command="alacritty -e zsh" />
     </keybind>
     <keybind key="F7">
 	 <action name="ForEach">
@@ -229,7 +230,7 @@
       <action name="Focus"/>
     </then>
     <none>
-      <action name="Execute" command="alacritty"/>
+      <action name="Execute" command="alacritty -e zsh"/>
     </none>
   </action>
 	</keybind>
@@ -269,13 +270,13 @@
     </none>
   </action>
 </keybind>
-<keybind key="F1">
-      <action name="Execute" command="window_list.sh" />
-    </keybind>
-    <keybind key="F6">
-      <action name="Iconify" />
-    </keybind>
 <keybind key="F2">
+      <action name="Execute" command="~/.local/bin/window_list.sh" />
+    </keybind>
+ <keybind key="Print">
+      <action name="grimshot copy screen" />
+    </keybind>
+<keybind key="F1" onRelease="yes">
       <action name="Execute" command="tofi-drun --font ~/.local/share/fonts/OstrichSans-Medium.otf --drun-launch=true --ascii-input true" />
     </keybind>
     <keybind key="F6">
@@ -372,7 +373,7 @@
   <mouse>
 
     <!-- time is in ms -->
-    <doubleClickTime>500</doubleClickTime>
+    <doubleClickTime>250</doubleClickTime>
     <scrollFactor>1.0</scrollFactor>
 
     <context name="Frame">
@@ -442,11 +443,11 @@
         <action name="Focus" />
         <action name="Raise" />
       </mousebind>
-      <mousebind direction="Up" action="Scroll">
+      <mousebind direction="Down" action="Scroll">
         <action name="Unshade" />
         <action name="Focus" />
       </mousebind>
-      <mousebind direction="Down" action="Scroll">
+      <mousebind direction="Up" action="Scroll">
         <action name="Unfocus" />
         <action name="Shade" />
       </mousebind>
@@ -457,7 +458,7 @@
         <action name="Move" />
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximize" />
+        <action name="Iconify" />
       </mousebind>
       <mousebind button="Right" action="Click">
         <action name="ShowMenu" menu="client-menu" />
@@ -619,6 +620,10 @@
       <calibrationMatrix></calibrationMatrix>
     </device>
   </libinput>
+
+<windowRules>
+  <windowRule identifier="imv" serverDecoration="yes"/>
+</windowRules>
 
   <!--
     # Window Rules
