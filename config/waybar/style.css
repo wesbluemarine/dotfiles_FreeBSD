@@ -24,7 +24,7 @@ window#waybar {
   background: linear-gradient(45deg, transparent 40%, alpha(@bg, .9) 40%, alpha(@bg, .9) 60%, transparent 60%);
 }
 
-#custom-clock
+#clock
 {
     font-size: 3.2rem;
     padding: 7.4rem 11.5rem;
