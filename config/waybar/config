@@ -5,12 +5,12 @@
   "margin-left": 1700,  
   "margin-bottom": 900,  
   "modules-center": [
-    "custom/clock",
+    "clock",
    ],
 
-  "custom/clock": {
-    "exec": "date '+%H:%M'",
-    "interval": 1,
+  "clock": {
+    "format": "{:%H:%M}",
+    "interval": 60,
     "rotate": 315,
   },
 }
