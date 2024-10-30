@@ -29,7 +29,7 @@
     <dropShadows>yes</dropShadows>
     <font place="ActiveWindow">
       <name>OstrichSans</name>
-      <size>20</size>
+      <size>19</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
@@ -51,6 +51,7 @@
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
+    <titlebar layout=":" />
   </theme>
 
   <!--
