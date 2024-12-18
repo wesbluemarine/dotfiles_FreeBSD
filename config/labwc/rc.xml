@@ -29,25 +29,25 @@
     <dropShadows>yes</dropShadows>
     <font place="ActiveWindow">
       <name>OstrichSans</name>
-      <size>19</size>
+      <size>24</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
     <font place="InactiveWindow">
       <name>OstrichSans</name>
-      <size>20</size>
+      <size>24</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
     <font place="MenuItem">
       <name>OstrichSans</name>
-      <size>20</size>
+      <size>24</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
     <font place="OnScreenDisplay">
       <name>OstrichSans</name>
-      <size>20</size>
+      <size>24</size>
       <slant>normal</slant>
       <weight>normal</weight>
     </font>
@@ -235,7 +235,7 @@
     </none>
   </action>
 	</keybind>
-    <keybind key="F8">
+    <keybind key="F9">
 	 <action name="ForEach">
     <query identifier="SDL_App"/>
     <then>
@@ -247,7 +247,7 @@
     </none>
   </action>
 	</keybind>
-        <keybind key="F9">
+        <keybind key="F8">
 	<action name="ForEach">
     <query identifier="pcmanfm"/>
     <then>
@@ -464,10 +464,7 @@
       <mousebind button="Right" action="Click">
         <action name="ShowMenu" menu="client-menu" />
       </mousebind>
-       <mousebind button="Middle" action="Click">
-        <action name="Lower" />
-      </mousebind>
-      <mousebind button="Middle" action="None">
+      <mousebind button="Middle" action="Click">
         <action name="Close" />
       </mousebind>      
    </context>
