@@ -24,9 +24,9 @@ window.active.button.disabled.image.color: #161618
 window.active.label.text.color: #555555
 window.inactive.label.text.color: #d3d3d3
 window.label.text.justify: left
-window.button.height: 38
+window.button.height: 40
 window.titlebar.padding.width: 16
-window.titlebar.padding.height: 0
+window.titlebar.padding.height: 2
 window.button.spacing: 0
 
 
