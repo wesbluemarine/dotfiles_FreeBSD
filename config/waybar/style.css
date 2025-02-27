@@ -1,9 +1,9 @@
 @define-color dark #252529;
 @define-color light #ffffff;
 @define-color green #77ddbb;
-@define-color yellow #ebcb8b;
+@define-color yellow #fbad44;
 @define-color red #ff6622;
-@define-color blue #88c0d0;
+@define-color blue #70dbbf;
 
 @define-color bg @dark;
 @define-color fg @light;
@@ -29,7 +29,7 @@ window#waybar {
     font-size: 3.2rem;
     padding: 7.4rem 11.5rem;
     margin-top: 4rem;
-    color: @light;
+    color: @hl;
     min-width:  5.5rem;
     min-height:  7.5rem;
 }
