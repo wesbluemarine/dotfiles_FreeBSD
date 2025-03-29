@@ -13,7 +13,7 @@
     <adaptiveSync>no</adaptiveSync>
     <allowTearing>no</allowTearing>
     <reuseOutputMode>no</reuseOutputMode>
-    <xwaylandPersistence>no</xwaylandPersistence>
+    <xwaylandPersistence>yes</xwaylandPersistence>
   </core>
 
 <placement>
@@ -220,8 +220,8 @@
       <action name="NextWindow" />
     </keybind>
     
-        <keybind key="W-Return">
-      <action name="Execute" command="alacritty -e zsh" />
+        <keybind key="A-Return">
+      <action name="Execute" command="alacritty" />
     </keybind>
     <keybind key="F7">
 	 <action name="ForEach">
@@ -231,13 +231,13 @@
       <action name="Focus"/>
     </then>
     <none>
-      <action name="Execute" command="alacritty -e zsh"/>
+      <action name="Execute" command="alacritty"/>
     </none>
   </action>
 	</keybind>
     <keybind key="F9">
 	 <action name="ForEach">
-    <query identifier="SDL_App"/>
+    <query title="*Lite XL"/>
     <then>
       <action name="Raise"/>
       <action name="Focus"/>
@@ -271,17 +271,17 @@
     </none>
   </action>
 </keybind>
-<keybind key="F2">
+    <keybind key="A-Space" onRelease="NO">
+      <action name="Execute" command="tofi-drun --font ~/.local/share/fonts/OstrichSans-Medium.otf" />
+    </keybind>
+    <keybind key="Super_L">
       <action name="Execute" command="~/.local/bin/window_list.sh" />
-    </keybind>
- <keybind key="Print">
-      <action name="grimshot copy screen" />
-    </keybind>
-<keybind key="F1" onRelease="yes">
-      <action name="Execute" command="tofi-drun --font ~/.local/share/fonts/OstrichSans-Medium.otf --drun-launch=true --ascii-input true" />
     </keybind>
     <keybind key="F6">
       <action name="Iconify" />
+    </keybind>
+    <keybind key="Print">
+      <action name="Execute" command="grimshot copy screen" />
     </keybind>
     <keybind key="F11">
       <action name="ToggleFullscreen" />
@@ -310,7 +310,7 @@
     <keybind key="W-Down">
       <action name="SnapToEdge" direction="down" />
     </keybind>
-    <keybind key="A-Space">
+    <keybind key="A-F3">
       <action name="ShowMenu" menu="client-menu" />
     </keybind>
     <keybind key="XF86_AudioLowerVolume">
@@ -465,13 +465,16 @@
         <action name="ShowMenu" menu="client-menu" />
       </mousebind>
       <mousebind button="Middle" action="Click">
+        <action name="ToggleShade" />
+      </mousebind>
+      <mousebind button="Middle" action="DoubleClick">
         <action name="Close" />
-      </mousebind>      
+      </mousebind>        
    </context>
 
     <context name="Maximize">
       <mousebind button="Left" action="Click">
-        <action name="None" />
+        <action name="none" />
       </mousebind>
       <mousebind button="Right" action="Click">
         <action name="None" direction="horizontal" />
@@ -621,6 +624,22 @@
 
 <windowRules>
   <windowRule identifier="imv" serverDecoration="yes"/>
+</windowRules>
+
+<windowRules>
+  <windowRule identifier="SDL_App" title="/home/makaba/Roms/calendar.rom" serverDecoration="no" fixedPosition="yes"/>
+</windowRules>
+
+<windowRules>
+  <windowRule identifier="SDL_App" title="/home/makaba/Roms/calendar.rom" fixedPosition="yes"/>
+</windowRules>
+
+<windowRules>
+  <windowRule identifier="SDL_App" title="/home/makaba/Roms/calendar.rom" skipTaskbar="yes"/>
+</windowRules>
+
+<windowRules>
+  <windowRule identifier="SDL_App" title="/home/makaba/Roms/calendar.rom"><action name="MoveTo" x="1154" y="0" /></windowRule>
 </windowRules>
 
   <!--
